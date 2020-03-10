@@ -14,7 +14,7 @@ namespace Qinweir.EntityFrameworkCore
             var configuration = BuildConfiguration();
 
             var builder = new DbContextOptionsBuilder<QinweirMigrationsDbContext>()
-                .UseSqlServer(configuration.GetConnectionString("Default"));
+                .UseSqlite(configuration.GetConnectionString("Default"));
 
             return new QinweirMigrationsDbContext(builder.Options);
         }

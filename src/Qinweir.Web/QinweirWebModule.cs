@@ -204,6 +204,7 @@ namespace Qinweir.Web
             app.UseSwaggerUI(options =>
             {
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "Qinweir API");
+                options.RoutePrefix="swagger";
             });
             app.UseAuditing();
             app.UseAbpSerilogEnrichers();

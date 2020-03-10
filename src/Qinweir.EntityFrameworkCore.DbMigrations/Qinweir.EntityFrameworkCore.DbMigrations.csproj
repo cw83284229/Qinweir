@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200310082412_CreateOrderMaterials.cs" />
+    <Compile Remove="Migrations\20200310082412_CreateOrderMaterials.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Qinweir.EntityFrameworkCore\Qinweir.EntityFrameworkCore.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Qinweir.OrderMaterials;
 using Qinweir.Users;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
@@ -20,6 +21,8 @@ namespace Qinweir.EntityFrameworkCore
     public class QinweirDbContext : AbpDbContext<QinweirDbContext>
     {
         public DbSet<AppUser> Users { get; set; }
+        public DbSet<CommonMaterial> CommonMaterials { get; set; }
+        public DbSet<BillMaterials> BillMaterials { get; set; }
 
         /* Add DbSet properties for your Aggregate Roots / Entities here.
          * Also map them inside QinweirDbContextModelCreatingExtensions.ConfigureQinweir

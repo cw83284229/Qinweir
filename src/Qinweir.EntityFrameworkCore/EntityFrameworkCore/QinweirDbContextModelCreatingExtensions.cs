@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Qinweir.OrderMaterials;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 using Volo.Abp.Users;
 
 namespace Qinweir.EntityFrameworkCore
@@ -19,6 +21,22 @@ namespace Qinweir.EntityFrameworkCore
 
             //    //...
             //});
+
+            builder.Entity<CommonMaterial>(b =>
+            {
+                b.ToTable(QinweirConsts.DbTablePrefix + "CommonMaterials", QinweirConsts.DbSchema);
+                b.ConfigureByConvention(); //auto configure for the base class props
+                b.Property(x => x.Id).IsRequired().HasMaxLength(128);
+            });
+            builder.Entity<BillMaterials>(b =>
+            {
+                b.ToTable(QinweirConsts.DbTablePrefix + "BillMaterials", QinweirConsts.DbSchema);
+                b.ConfigureByConvention(); //auto configure for the base class props
+                b.Property(x => x.Id).IsRequired().HasMaxLength(128);
+            });
+
+
+
         }
 
         public static void ConfigureCustomUserProperties<TUser>(this EntityTypeBuilder<TUser> b)

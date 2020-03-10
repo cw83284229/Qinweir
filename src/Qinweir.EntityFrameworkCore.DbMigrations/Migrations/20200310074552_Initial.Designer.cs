@@ -2,129 +2,21 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Qinweir.EntityFrameworkCore;
 
 namespace Qinweir.Migrations
 {
     [DbContext(typeof(QinweirMigrationsDbContext))]
-    partial class QinweirMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200310074552_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.0");
-
-            modelBuilder.Entity("Qinweir.OrderMaterials.BillMaterials", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasMaxLength(128);
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnName("ConcurrencyStamp")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnName("CreationTime")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("CreatorId")
-                        .HasColumnName("CreatorId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnName("ExtraProperties")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnName("LastModificationTime")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("LastModifierId")
-                        .HasColumnName("LastModifierId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("MaterialsName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("MaterialsType")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("MateriralsPrice")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Remark")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("units")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AppBillMaterials");
-                });
-
-            modelBuilder.Entity("Qinweir.OrderMaterials.CommonMaterial", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasMaxLength(128);
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnName("ConcurrencyStamp")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnName("CreationTime")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("CreatorId")
-                        .HasColumnName("CreatorId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnName("ExtraProperties")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnName("LastModificationTime")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("LastModifierId")
-                        .HasColumnName("LastModifierId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("MaterialsName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("MaterialsType")
-                        .HasColumnType("TEXT");
-
-                    b.Property<long>("MateriralsCount")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<decimal>("MateriralsPrice")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("OrderStore")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("OrderTime")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Remark")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AppCommonMaterials");
-                });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>
                 {

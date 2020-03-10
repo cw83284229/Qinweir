@@ -54,4 +54,15 @@
     <PackageReference Include="Volo.Abp.FeatureManagement.Web" Version="2.2.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\DB\" />
+    <Folder Include="DB\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="SQLite.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
