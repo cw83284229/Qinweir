@@ -25,7 +25,10 @@ namespace Qinweir.OrderMaterials
         /// 单位
         /// </summary>
         public string units { get; set; }
-
+        /// <summary>
+        /// 材料数量
+        /// </summary>
+        public long MateriralsCount { get; set; }
         /// <summary>
         /// 价格
         /// </summary>
@@ -37,5 +40,13 @@ namespace Qinweir.OrderMaterials
         public string Remark { get; set; }
 
 
+        public int CommonMaterialId { get; set; }
+        ///// <summary>
+        ///// 增加类别可空外键
+        ///// </summary>
+        //[ForeignKey("CommonMaterialId")]
+        //public virtual CommonMaterial CommonMaterial { get; set; }
+
+      
     }
 }

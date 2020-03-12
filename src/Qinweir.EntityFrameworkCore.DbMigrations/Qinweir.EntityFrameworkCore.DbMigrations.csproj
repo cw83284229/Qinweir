@@ -10,6 +10,20 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200310082412_CreateOrderMaterials.cs" />
     <Compile Remove="Migrations\20200310082412_CreateOrderMaterials.Designer.cs" />
+    <Compile Remove="Migrations\20200310084156_CreateOrderMaterials.cs" />
+    <Compile Remove="Migrations\20200310084156_CreateOrderMaterials.Designer.cs" />
+    <Compile Remove="Migrations\20200311032046_test.cs" />
+    <Compile Remove="Migrations\20200311032046_test.Designer.cs" />
+    <Compile Remove="Migrations\20200311033353_UpdateBIllmaterials.cs" />
+    <Compile Remove="Migrations\20200311033353_UpdateBIllmaterials.Designer.cs" />
+    <Compile Remove="Migrations\20200311033750_CreateCommonMaterials.cs" />
+    <Compile Remove="Migrations\20200311033750_CreateCommonMaterials.Designer.cs" />
+    <Compile Remove="Migrations\20200311062417_updatebillmaterials.cs" />
+    <Compile Remove="Migrations\20200311062417_updatebillmaterials.Designer.cs" />
+    <Compile Remove="Migrations\20200311062737_CreateCommonMaterials.cs" />
+    <Compile Remove="Migrations\20200311062737_CreateCommonMaterials.Designer.cs" />
+    <Compile Remove="Migrations\20200311064914_CreateCommonMaterials.cs" />
+    <Compile Remove="Migrations\20200311064914_CreateCommonMaterials.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

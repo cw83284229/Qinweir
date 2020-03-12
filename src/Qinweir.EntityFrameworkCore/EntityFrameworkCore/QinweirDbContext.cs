@@ -48,6 +48,7 @@ namespace Qinweir.EntityFrameworkCore
 
                 //Moved customization to a method so we can share it with the QinweirMigrationsDbContext class
                 b.ConfigureCustomUserProperties();
+                
             });
 
             /* Configure your own tables/entities inside the ConfigureQinweir method */

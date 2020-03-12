@@ -14,9 +14,9 @@ namespace Qinweir
 
 
             CreateMap<CommonMaterial, CommonMaterialDTO>();
-            CreateMap<CommonMaterialDTO, CommonMaterial>();
+            CreateMap<UpdateCommonMaterialDTO, CommonMaterial>();
             CreateMap<BillMaterials, BillMaterialsDTO>();
-            CreateMap<BillMaterialsDTO, BillMaterials>();
+            CreateMap<UpdateBillMaterialsDTO, BillMaterials>();
 
 
 

@@ -34,7 +34,8 @@ namespace Qinweir.EntityFrameworkCore
                 b.ConfigureByConvention(); //auto configure for the base class props
                 b.Property(x => x.Id).IsRequired().HasMaxLength(128);
             });
-
+            ////配置1对多外键关系
+            //builder.Entity<BillMaterials>().HasOne(c => c.CommonMaterial).WithMany(c => c.BillMaterials).HasForeignKey(c => c.CommonMaterialId);
 
 
         }

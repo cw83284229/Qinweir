@@ -29,6 +29,11 @@ namespace Qinweir.Web.Menus
             var l = context.ServiceProvider.GetRequiredService<IStringLocalizer<QinweirResource>>();
 
             context.Menu.Items.Insert(0, new ApplicationMenuItem("Qinweir.Home", l["Menu:Home"], "/"));
+            //添加菜单地方
+            context.Menu.AddItem(new ApplicationMenuItem("Qinweir", l["Menu:Qinweir"])
+             .AddItem(new ApplicationMenuItem(" Qinweir.OrderMaterials", l["Menu:OrderMaterials"], url: "/OrderMaterials"))
+);
+
         }
     }
 }

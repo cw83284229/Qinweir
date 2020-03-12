@@ -9,8 +9,8 @@ using Qinweir.EntityFrameworkCore;
 namespace Qinweir.Migrations
 {
     [DbContext(typeof(QinweirMigrationsDbContext))]
-    [Migration("20200310084156_CreateOrderMaterials")]
-    partial class CreateOrderMaterials
+    [Migration("20200311072142_CreateCommonMaterials")]
+    partial class CreateCommonMaterials
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,57 +25,8 @@ namespace Qinweir.Migrations
                         .HasColumnType("INTEGER")
                         .HasMaxLength(128);
 
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnName("ConcurrencyStamp")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnName("CreationTime")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("CreatorId")
-                        .HasColumnName("CreatorId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnName("ExtraProperties")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnName("LastModificationTime")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("LastModifierId")
-                        .HasColumnName("LastModifierId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("MaterialsName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("MaterialsType")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("MateriralsPrice")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Remark")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("units")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("AppBillMaterials");
-                });
-
-            modelBuilder.Entity("Qinweir.OrderMaterials.CommonMaterial", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasMaxLength(128);
+                    b.Property<int>("CommonMaterialId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -112,6 +63,51 @@ namespace Qinweir.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<decimal>("MateriralsPrice")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Remark")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("units")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CommonMaterialId");
+
+                    b.ToTable("AppBillMaterials");
+                });
+
+            modelBuilder.Entity("Qinweir.OrderMaterials.CommonMaterial", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasMaxLength(128);
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnName("ConcurrencyStamp")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnName("CreationTime")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnName("CreatorId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnName("ExtraProperties")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnName("LastModificationTime")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnName("LastModifierId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("OrderStore")
@@ -1648,6 +1644,15 @@ namespace Qinweir.Migrations
                     b.HasKey("TenantId", "Name");
 
                     b.ToTable("AbpTenantConnectionStrings");
+                });
+
+            modelBuilder.Entity("Qinweir.OrderMaterials.BillMaterials", b =>
+                {
+                    b.HasOne("Qinweir.OrderMaterials.CommonMaterial", null)
+                        .WithMany("BillMaterials")
+                        .HasForeignKey("CommonMaterialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLogAction", b =>
