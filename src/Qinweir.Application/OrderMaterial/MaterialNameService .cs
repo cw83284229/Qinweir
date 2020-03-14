@@ -9,18 +9,18 @@ using Volo.Abp.Domain.Repositories;
 
 namespace Qinweir.OrderMaterial
 {
-  public  class BillMaterialService:
+  public  class MaterialNameService:
         CrudAppService< //Defines CRUD methods
-            BillMaterials,
-            BillMaterialsDTO, //Used to show books
+           MaterialName,
+           MaterialNameDTO, //Used to show books
             int, //Primary key of the book entity
             PagedAndSortedResultRequestDto, //Used for paging/sorting on getting a list of books
-            UpdateBillMaterialsDTO, //Used to create a new book
-            UpdateBillMaterialsDTO>,IBillMaterialService //Used to update a
+           UpdateMaterialNameDTO, //Used to create a new book
+           UpdateMaterialNameDTO>,IMaterialNameService//Used to update a
 
     {
 
-        public BillMaterialService(IRepository<BillMaterials, int> repository)
+        public MaterialNameService(IRepository<MaterialName, int> repository)
             : base(repository)
 
         { 

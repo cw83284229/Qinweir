@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Qinweir.Application.Contracts;
 
 namespace Qinweir.Web
 {
@@ -7,6 +8,8 @@ namespace Qinweir.Web
         public QinweirWebAutoMapperProfile()
         {
             //Define your AutoMapper configuration here for the Web project.
+
+            CreateMap<MaterialNameDTO, UpdateMaterialNameDTO>();
         }
     }
 }

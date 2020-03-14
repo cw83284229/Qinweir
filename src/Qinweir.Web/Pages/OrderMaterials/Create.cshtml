@@ -1,0 +1,62 @@
+﻿@page
+@inherits Qinweir.Web.Pages.QinweirPage
+@model Qinweir.Web.Pages.OrderMaterials.CreateModel
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@{
+    ViewData["Title"] = "Create";
+}
+@section scripts
+{
+    <abp-script src="/Pages/OrderMaterials/create.js" />
+}
+<h1>Create</h1>
+
+<abp-card>
+
+
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_4">
+                <h2>下单时间</h2>
+                <span><input id="time" /></span>
+            </abp-column>
+            <abp-column size-md="_4">
+                <h2>下单门店</h2>
+                <span><input id="shop" /></span>
+            </abp-column>
+
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="BooksTable">
+            <thead>
+                <tr>
+                    <th>@L["Id"]</th>
+                    <th>@L["MaterialsType"]</th>
+                    <th>@L["MaterialsName"]</th>
+                    <th>@L["Units"]</th>
+                    <th>@L["MaterialCount"]</th>
+                    <th>@L["Remark"]</th>
+
+                </tr>
+            </thead>
+
+            @foreach (var item in Model.materialNames)
+            {
+
+                <tr>
+                    <th>@Html.DisplayName(item.Id.ToString())</th>
+                    <th>@Html.DisplayName(item.MaterialsType)</th>
+                    <th>@Html.DisplayName(item.MaterialsName)</th>
+                    <th>@Html.DisplayName(item.units)</th>
+                    <th>@Html.TextBox("count")</th>
+
+
+                </tr>
+            }
+
+        </abp-table>
+
+    </abp-card-body>
+
+</abp-card>

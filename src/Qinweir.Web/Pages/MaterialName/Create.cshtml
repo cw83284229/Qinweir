@@ -1,0 +1,20 @@
+﻿@page
+@inherits Qinweir.Web.Pages.QinweirPage
+@model Qinweir.Web.Pages.MaterialName.CreateModel
+@using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Modal
+@using Qinweir.Application.Contracts
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<<abp-dynamic-form abp-model="materialNames" data-ajaxForm="true" asp-page="/MaterialName/Create">
+    <abp-modal>
+        <abp-modal-header title="@L["NewMaterialName"].Value"></abp-modal-header>
+        <abp-modal-body>
+            <abp-form-content />
+        </abp-modal-body>
+        <abp-modal-footer buttons="@(AbpModalButtons.Cancel|AbpModalButtons.Save)"></abp-modal-footer>
+    </abp-modal>
+</abp-dynamic-form>

@@ -5,7 +5,27 @@
     "Welcome": "欢迎",
     "LongWelcomeMessage": "欢迎来到该应用程序. 这是一个基于ABP框架的启动项目. 有关更多信息, 请访问 abp.io.",
     "Menu:Qinweir": "秦味儿",
-    "Menu:OrderMaterials": "订单"
+    "Menu:OrderMaterials": "订单",
+    "Menu:MaterialName": "材料清单",
+
+    "OrderStore": "订货门店",
+    "OrderTime": "订货时间"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
 
 

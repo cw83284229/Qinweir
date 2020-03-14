@@ -1,7 +1,9 @@
 ﻿using Qinweir.Application.Contracts;
+using Qinweir.OrderMaterial;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
@@ -21,5 +23,8 @@ namespace Qinweir
 
 
     {
+
+
+        public  Task<PagedResultDto<OrderMaterialDTO>> GetOrderListAsync(PagedAndSortedResultRequestDto input, string orderTime, string orderShop);
     }
 }

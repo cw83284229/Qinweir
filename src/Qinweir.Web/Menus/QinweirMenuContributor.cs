@@ -32,7 +32,8 @@ namespace Qinweir.Web.Menus
             //添加菜单地方
             context.Menu.AddItem(new ApplicationMenuItem("Qinweir", l["Menu:Qinweir"])
              .AddItem(new ApplicationMenuItem(" Qinweir.OrderMaterials", l["Menu:OrderMaterials"], url: "/OrderMaterials"))
-);
+             .AddItem(new ApplicationMenuItem("Qinweir.MaterialName",l["Menu:MaterialName"],url:"/MaterialName"))
+           );
 
         }
     }

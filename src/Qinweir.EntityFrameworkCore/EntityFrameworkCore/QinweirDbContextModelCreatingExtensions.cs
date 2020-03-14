@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Qinweir.OrderMaterial;
 using Qinweir.OrderMaterials;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore.Modeling;
@@ -36,7 +37,12 @@ namespace Qinweir.EntityFrameworkCore
             });
             ////配置1对多外键关系
             //builder.Entity<BillMaterials>().HasOne(c => c.CommonMaterial).WithMany(c => c.BillMaterials).HasForeignKey(c => c.CommonMaterialId);
-
+            builder.Entity<MaterialName>(b =>
+            {
+                b.ToTable(QinweirConsts.DbTablePrefix + "MaterialNames", QinweirConsts.DbSchema);
+                b.ConfigureByConvention(); //auto configure for the base class props
+                b.Property(x => x.Id).IsRequired().HasMaxLength(128);
+            });
 
         }
 

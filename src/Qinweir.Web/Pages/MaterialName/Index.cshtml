@@ -1,0 +1,44 @@
+﻿@page
+@model Qinweir.Web.Pages.MaterialName.IndexModel
+@inherits Qinweir.Web.Pages.QinweirPage
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section scripts
+{
+    <abp-script src="/Pages/MaterialName/index.js" />
+}
+<abp-card>
+    <abp-card-header>
+        <h2>@L["材料清单页面"]</h2>
+    </abp-card-header>
+
+    <abp-card-header>
+        <abp-row>
+            <abp-column size-md="_6">
+                <h2>@L["MaterialName"]</h2>
+            </abp-column>
+            <abp-column size-md="_6" class="text-right">
+                <abp-button id="NewBookButton"
+                            text="@L["NewMaterialName"].Value"
+                            icon="plus"
+                            button-type="Primary" />
+            </abp-column>
+        </abp-row>
+    </abp-card-header>
+    <abp-card-body>
+        <abp-table striped-rows="true" id="BooksTable">
+            <thead>
+                <tr>
+                    <th>@L["MaterialsType"]</th>
+                    <th>@L["MaterialsName"]</th>
+                    <th>@L["Units"]</th>
+                    <th>@L["UnitPrice"]</th>
+                    <th>@L["Actions"]</th>
+
+                </tr>
+            </thead>
+        </abp-table>
+    </abp-card-body>
+</abp-card>
