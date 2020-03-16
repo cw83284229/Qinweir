@@ -12,7 +12,7 @@
 <h1>Create</h1>
 
 <abp-card>
-
+    <!-- <form action="Create" id="orderForm" method="post"> -->
 
     <abp-card-header>
         <abp-row>
@@ -28,7 +28,7 @@
         </abp-row>
     </abp-card-header>
     <abp-card-body>
-        <abp-table striped-rows="true" id="BooksTable">
+        <abp-table striped-rows="true" id="BooksTable" name="" method="post">
             <thead>
                 <tr>
                     <th>@L["Id"]</th>
@@ -40,18 +40,17 @@
 
                 </tr>
             </thead>
-
+            @{int i = 0;}
             @foreach (var item in Model.materialNames)
             {
-
-                <tr>
+                i++;
+                <tr id=@i>
                     <th>@Html.DisplayName(item.Id.ToString())</th>
                     <th>@Html.DisplayName(item.MaterialsType)</th>
                     <th>@Html.DisplayName(item.MaterialsName)</th>
                     <th>@Html.DisplayName(item.units)</th>
                     <th>@Html.TextBox("count")</th>
-
-
+                    <th>@Html.TextBox("remark")</th>
                 </tr>
             }
 
@@ -59,4 +58,44 @@
 
     </abp-card-body>
 
+    <input type="submit" id="save" onclick="postOrder()" value="保存">
+    <!-- </form> -->
 </abp-card>
+
+@*<script>
+
+    $(function () {
+        $("#save").click(function () {//一条一条加入记录
+            var trList = $("BooksTable").find("tr");
+            //表头不用，所以i从1开始
+            for (var i = 1; i < trList.length; i++) {
+                var trArr = trList.eq(i);
+                var pno = trArr.children("td").eq(0).text();//获奖编号
+                var pname = trArr.children("td").eq(1).text();//获奖名称
+                var pyear = trArr.children("td").eq(2).text();//  获奖年份
+                var pno1 = trArr.children("td").eq(3).text();//获奖编号
+                var pname2 = trArr.children("td").eq(4).text();//获奖名称
+                var pyear3 = trArr.children("td").eq(5).text();//  获奖年份
+                var 
+                $.post("stuPrizeServlet", { pno: pno, pname: pname, pyear: pyear }, function (data) {
+                    //处理服务器响应的数据data  flag:true errorMsg:注册成功
+                    if (data.flag) {
+                        //如果注册成功,跳转到成功页面
+                        $("#save_res").html("保存成功！");
+                        // location.href = "http://localhost/suiningAdmissions/category4_5.html";
+                        // alert("保存成功！")
+                    } else {
+                        //注册失败
+                        $("#errorMsg").html(data.errorMsg);
+                    }
+
+                }, "json");
+            }
+        });
+
+    })
+
+
+
+
+</script>*@

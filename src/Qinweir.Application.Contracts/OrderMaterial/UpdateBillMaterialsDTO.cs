@@ -43,7 +43,7 @@ namespace Qinweir.Application.Contracts
         ///// </summary>
         //public UpdateCommonMaterialDTO CommonMaterial { get; set; }
 
-        public int CommonMaterialId { get; set; }
+        public int? CommonMaterialId { get; set; }
 
     }
 }
